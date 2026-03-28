@@ -1,0 +1,66 @@
+/* ─── Google Fonts fallback (active until custom fonts are loaded) ─── */
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Montserrat:wght@300;400;500;600&display=swap');
+
+/* ─── Design Tokens ─── */
+:root {
+  /* Colors */
+  --black:      #111111;
+  --white:      #ffffff;
+  --warm-gray:  #f5f2ee;
+  --warm-gray2: #ede9e2;
+  --gold:       #c7a46a;
+  --gold-light: #e8d5b0;
+  --gold-dark:  #a07840;
+  --muted:      #888888;
+  --muted-lt:   #aaaaaa;
+
+  /* Typography
+     ↓ Swap these to your custom font names after adding to /public/fonts/ */
+  --font-serif: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
+  --font-sans:  'Montserrat', -apple-system, BlinkMacSystemFont, sans-serif;
+
+  /* Spacing */
+  --section-pad: clamp(80px, 10vw, 140px);
+  --container:   1200px;
+
+  /* Easing */
+  --ease-out:    cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out: cubic-bezier(0.76, 0, 0.24, 1);
+}
+
+/* ─── Reset ─── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  font-family: var(--font-sans);
+  color: var(--black);
+  background: var(--white);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+img { display: block; max-width: 100%; }
+a { text-decoration: none; color: inherit; }
+button { cursor: pointer; font-family: inherit; }
+ul, ol { list-style: none; }
+
+/* ─── Selection ─── */
+::selection {
+  background: var(--gold);
+  color: var(--white);
+}
+
+/* ─── Scrollbar ─── */
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--gold); border-radius: 2px; }
