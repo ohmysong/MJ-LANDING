@@ -1,6 +1,5 @@
 import React, { useRef } from 'react'
 import { motion, useScroll, useTransform } from 'framer-motion'
-import ImagePlaceholder from './ImagePlaceholder'
 
 const stagger = {
   hidden: {},
@@ -23,11 +22,10 @@ const Hero = () => {
     <section ref={ref} id="hero" style={{ position: 'relative', height: '100svh', minHeight: 640, overflow: 'hidden' }}>
       {/* Background image layer — parallax */}
       <motion.div style={{ y: bgY, position: 'absolute', inset: '-10% 0', zIndex: 0 }}>
-        <ImagePlaceholder
-          dark
-          label="Hero Background"
-          desc="Natural female face close-up · Bright skin · Natural light"
-          style={{ height: '120%', minHeight: '120%', background: '#18140f' }}
+        <img
+          src="/images/hero.jpg"
+          alt="Hero Background"
+          style={{ width: '100%', height: '120%', minHeight: '120%', objectFit: 'cover', objectPosition: 'center' }}
         />
         {/* Dark gradient overlay */}
         <div style={{

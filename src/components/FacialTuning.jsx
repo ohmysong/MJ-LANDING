@@ -1,7 +1,6 @@
 import React from 'react'
 import { motion } from 'framer-motion'
 import FadeIn from './FadeIn'
-import ImagePlaceholder from './ImagePlaceholder'
 
 const dimensions = [
   { num: '01', label: 'Front', desc: 'Facial symmetry and proportional balance' },
@@ -33,11 +32,10 @@ const FacialTuning = () => {
           whileHover={{ scale: 1.02 }}
           transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
         >
-          <ImagePlaceholder
-            dark
-            label="4D Facial Tuning"
-            desc="Facial harmony in motion · Natural expression"
-            style={{ height: '100%', minHeight: 640 }}
+          <img
+            src="/images/4D Facial Tuning.jpg"
+            alt="4D Facial Tuning"
+            style={{ width: '100%', height: '100%', minHeight: 640, objectFit: 'cover', objectPosition: 'center' }}
           />
         </motion.div>
       </div>

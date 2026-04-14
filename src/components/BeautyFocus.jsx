@@ -21,6 +21,7 @@ const treatments = [
     desc: 'Softening expression lines while keeping character.',
     label: 'Wrinkles · Image',
     img: 'Smooth skin · Natural look',
+    imagePath: '/images/Wrinkles.jpg',
   },
   {
     num: '04', title: 'Firmness',
@@ -81,7 +82,7 @@ const BeautyFocus = () => (
   </section>
 )
 
-const FocusCard = ({ num, title, desc, label, img }) => {
+const FocusCard = ({ num, title, desc, label, img, imagePath }) => {
   const [hovered, setHovered] = React.useState(false)
 
   return (
@@ -97,11 +98,19 @@ const FocusCard = ({ num, title, desc, label, img }) => {
           transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
           style={{ height: '100%' }}
         >
-          <ImagePlaceholder
-            label={label}
-            desc={img}
-            style={{ height: '100%', minHeight: 'unset', background: '#ddd5c8' }}
-          />
+          {imagePath ? (
+            <img
+              src={imagePath}
+              alt={title}
+              style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+            />
+          ) : (
+            <ImagePlaceholder
+              label={label}
+              desc={img}
+              style={{ height: '100%', minHeight: 'unset', background: '#ddd5c8' }}
+            />
+          )}
         </motion.div>
       </div>
 

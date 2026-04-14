@@ -1,7 +1,6 @@
 import React from 'react'
 import { motion, useInView } from 'framer-motion'
 import FadeIn from './FadeIn'
-import ImagePlaceholder from './ImagePlaceholder'
 
 const Philosophy = () => {
   const ref = React.useRef(null)
@@ -110,10 +109,10 @@ const Philosophy = () => {
                 transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
                 style={{ height: '100%' }}
               >
-                <ImagePlaceholder
-                  label="Philosophy 01"
-                  desc="Skin detail · Close-up texture"
-                  style={{ height: '100%', minHeight: 'unset' }}
+                <img
+                  src="/images/Philosophy_01.png"
+                  alt="Philosophy 01"
+                  style={{ width: '100%', height: '100%', objectFit: 'cover' }}
                 />
               </motion.div>
             </div>
@@ -123,10 +122,10 @@ const Philosophy = () => {
                 transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
                 style={{ height: '100%' }}
               >
-                <ImagePlaceholder
-                  label="Philosophy 02"
-                  desc="Natural smile · Warm tone"
-                  style={{ height: '100%', minHeight: 'unset' }}
+                <img
+                  src="/images/Philosophy_02.png"
+                  alt="Philosophy 02"
+                  style={{ width: '100%', height: '100%', objectFit: 'cover' }}
                 />
               </motion.div>
             </div>
