@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
+import { Link } from 'react-router-dom'
 
 const links = [
   { label: 'Philosophy', href: '#philosophy' },
@@ -72,26 +73,43 @@ const Nav = () => {
           ))}
         </ul>
 
-        {/* CTA */}
-        <a
-          href="#consultation"
-          style={{
-            fontFamily: 'var(--font-sans)',
-            fontSize: 10,
-            fontWeight: 600,
-            letterSpacing: '0.2em',
-            textTransform: 'uppercase',
-            color: 'var(--gold)',
-            border: '1px solid rgba(199,164,106,0.5)',
-            padding: '10px 24px',
-            transition: 'background 0.25s, color 0.25s',
-          }}
-          onMouseEnter={e => { e.target.style.background = 'var(--gold)'; e.target.style.color = '#111' }}
-          onMouseLeave={e => { e.target.style.background = 'transparent'; e.target.style.color = 'var(--gold)' }}
-          className="nav-cta"
-        >
-          Consultation
-        </a>
+        {/* CTAs */}
+        <div style={{ display: 'flex', alignItems: 'center', gap: 12 }} className="nav-cta">
+          <a
+            href="#consultation"
+            style={{
+              fontFamily: 'var(--font-sans)',
+              fontSize: 10,
+              fontWeight: 600,
+              letterSpacing: '0.2em',
+              textTransform: 'uppercase',
+              color: 'rgba(255,255,255,0.45)',
+              transition: 'color 0.2s',
+            }}
+            onMouseEnter={e => e.target.style.color = '#fff'}
+            onMouseLeave={e => e.target.style.color = 'rgba(255,255,255,0.45)'}
+          >
+            Consultation
+          </a>
+          <a
+            href="/precheck"
+            style={{
+              fontFamily: 'var(--font-sans)',
+              fontSize: 10,
+              fontWeight: 600,
+              letterSpacing: '0.2em',
+              textTransform: 'uppercase',
+              color: '#111',
+              background: 'var(--gold)',
+              padding: '10px 22px',
+              transition: 'opacity 0.2s',
+            }}
+            onMouseEnter={e => e.target.style.opacity = '0.85'}
+            onMouseLeave={e => e.target.style.opacity = '1'}
+          >
+            Pre-Check
+          </a>
+        </div>
 
         {/* Mobile hamburger */}
         <button
@@ -155,20 +173,39 @@ const Nav = () => {
                 {l.label}
               </motion.a>
             ))}
-            <a
-              href="#consultation"
-              onClick={() => setMenuOpen(false)}
-              style={{
-                display: 'inline-block', marginTop: 28,
-                fontFamily: 'var(--font-sans)',
-                fontSize: 11, fontWeight: 600, letterSpacing: '0.2em',
-                textTransform: 'uppercase',
-                background: 'var(--gold)', color: '#111',
-                padding: '14px 32px',
-              }}
-            >
-              Consultation
-            </a>
+            <div style={{ display: 'flex', gap: 12, marginTop: 28, flexWrap: 'wrap' }}>
+              <a
+                href="#consultation"
+                onClick={() => setMenuOpen(false)}
+                style={{
+                  display: 'inline-block',
+                  fontFamily: 'var(--font-sans)',
+                  fontSize: 11, fontWeight: 600, letterSpacing: '0.2em',
+                  textTransform: 'uppercase',
+                  border: '1px solid rgba(199,164,106,0.5)',
+                  color: 'var(--gold)',
+                  padding: '14px 28px',
+                }}
+              >
+                Consultation
+              </a>
+              <a
+                href={PRECHECK_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => setMenuOpen(false)}
+                style={{
+                  display: 'inline-block',
+                  fontFamily: 'var(--font-sans)',
+                  fontSize: 11, fontWeight: 600, letterSpacing: '0.2em',
+                  textTransform: 'uppercase',
+                  background: 'var(--gold)', color: '#111',
+                  padding: '14px 28px',
+                }}
+              >
+                Begin Pre-Check
+              </a>
+            </div>
           </motion.div>
         )}
       </AnimatePresence>

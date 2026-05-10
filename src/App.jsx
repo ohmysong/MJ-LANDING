@@ -1,4 +1,5 @@
 import React from 'react'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Nav from './components/Nav'
 import Hero from './components/Hero'
 import Philosophy from './components/Philosophy'
@@ -10,8 +11,9 @@ import Trust from './components/Trust'
 import Concierge from './components/Concierge'
 import Consultation from './components/Consultation'
 import Footer from './components/Footer'
+import PreCheckFlow from './components/precheck/PreCheckFlow'
 
-const App = () => (
+const LandingPage = () => (
   <>
     <Nav />
     <main>
@@ -27,6 +29,15 @@ const App = () => (
     </main>
     <Footer />
   </>
+)
+
+const App = () => (
+  <BrowserRouter>
+    <Routes>
+      <Route path="/" element={<LandingPage />} />
+      <Route path="/precheck" element={<PreCheckFlow />} />
+    </Routes>
+  </BrowserRouter>
 )
 
 export default App

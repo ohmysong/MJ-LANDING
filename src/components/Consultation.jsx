@@ -46,10 +46,57 @@ const Consultation = () => {
             fontFamily: 'var(--font-serif)',
             fontSize: 17, fontStyle: 'italic',
             color: 'rgba(255,255,255,0.35)',
-            marginBottom: 56,
+            marginBottom: 40,
           }}>
             Private consultation with Dr. —
           </p>
+
+          {/* Pre-Check CTA */}
+          <div style={{
+            border: '1px solid rgba(199,164,106,0.2)',
+            padding: '32px 40px',
+            marginBottom: 56,
+            textAlign: 'left',
+          }}>
+            <p style={{
+              fontFamily: 'var(--font-sans)', fontSize: 10, fontWeight: 600,
+              letterSpacing: '0.25em', textTransform: 'uppercase',
+              color: 'var(--gold)', marginBottom: 10,
+            }}>
+              Recommended First Step
+            </p>
+            <p style={{
+              fontFamily: 'var(--font-serif)', fontSize: 20, fontWeight: 300,
+              color: '#fff', marginBottom: 8,
+            }}>
+              Begin with a Curated Pre-Check
+            </p>
+            <p style={{
+              fontFamily: 'var(--font-serif)', fontSize: 14, fontStyle: 'italic',
+              color: 'rgba(255,255,255,0.35)', marginBottom: 24, lineHeight: 1.7,
+            }}>
+              Share your skin concerns, goals, and lifestyle — so we can prepare
+              a personalised consultation plan before your visit.
+            </p>
+            <motion.a
+              href="/precheck"
+              whileHover={{ opacity: 0.85 }}
+              whileTap={{ scale: 0.98 }}
+              style={{
+                display: 'inline-flex', alignItems: 'center', gap: 10,
+                fontFamily: 'var(--font-sans)', fontSize: 10, fontWeight: 600,
+                letterSpacing: '0.22em', textTransform: 'uppercase',
+                background: 'var(--gold)', color: '#111',
+                padding: '14px 28px',
+                textDecoration: 'none',
+              }}
+            >
+              Start My Pre-Check
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                <path d="M2 7h10M7 2l5 5-5 5" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round"/>
+              </svg>
+            </motion.a>
+          </div>
         </FadeIn>
 
         <AnimatePresence mode="wait">
