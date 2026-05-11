@@ -4,7 +4,7 @@
 export const FACE_AREA_PATHS = [
   {
     id: "forehead",
-    label: "이마",
+    label: "Forehead",
     shapes: [
       { type: 'ellipse', cx: 627, cy: 397, rx: 197, ry: 108, rotation: 1 }
     ],
@@ -17,7 +17,7 @@ export const FACE_AREA_PATHS = [
   },
   {
     id: "temples",
-    label: "관자놀이",
+    label: "Temples",
     shapes: [
       { type: 'ellipse', cx: 373, cy: 556, rx: 51, ry: 64 },
       { type: 'ellipse', cx: 881, cy: 556, rx: 51, ry: 64 }
@@ -30,7 +30,7 @@ export const FACE_AREA_PATHS = [
   },
   {
     id: "upperEyes",
-    label: "눈썹 / 눈꺼풀",
+    label: "Eyebrows / Upper Eyes",
     shapes: [
       { type: 'ellipse', cx: 482, cy: 521, rx: 85, ry: 33 },
       { type: 'ellipse', cx: 773, cy: 521, rx: 85, ry: 33 }
@@ -44,7 +44,7 @@ export const FACE_AREA_PATHS = [
   },
   {
     id: "frownLines",
-    label: "미간 주름",
+    label: "Frown Lines",
     shapes: [
       { type: 'ellipse', cx: 621, cy: 538, rx: 50, ry: 30 }
     ],
@@ -57,7 +57,7 @@ export const FACE_AREA_PATHS = [
   },
   {
     id: "crowsFeet",
-    label: "눈가 주름",
+    label: "Crow's Feet",
     shapes: [
       { type: 'ellipse', cx: 398, cy: 632, rx: 35, ry: 31 },
       { type: 'ellipse', cx: 856, cy: 632, rx: 35, ry: 31 }
@@ -71,7 +71,7 @@ export const FACE_AREA_PATHS = [
   },
   {
     id: "underEyes",
-    label: "눈 밑 / 다크서클",
+    label: "Under Eyes",
     shapes: [
       { type: 'ellipse', cx: 482, cy: 661, rx: 63, ry: 27 },
       { type: 'ellipse', cx: 773, cy: 661, rx: 63, ry: 27 }
@@ -86,7 +86,7 @@ export const FACE_AREA_PATHS = [
   },
   {
     id: "nose",
-    label: "코",
+    label: "Nose",
     shapes: [
       { type: 'ellipse', cx: 623, cy: 676, rx: 66, ry: 112 }
     ],
@@ -98,7 +98,7 @@ export const FACE_AREA_PATHS = [
   },
   {
     id: "cheeks",
-    label: "볼 / 중안부",
+    label: "Cheeks / Midface",
     shapes: [
       { type: 'ellipse', cx: 478, cy: 746, rx: 84, ry: 77 },
       { type: 'ellipse', cx: 777, cy: 746, rx: 84, ry: 77 }
@@ -113,7 +113,7 @@ export const FACE_AREA_PATHS = [
   },
   {
     id: "nasolabialFolds",
-    label: "팔자 주름",
+    label: "Nasolabial Folds",
     shapes: [
       { type: 'ellipse', cx: 544, cy: 813, rx: 18, ry: 63, rotation: 21 },
       { type: 'ellipse', cx: 710, cy: 813, rx: 18, ry: 63, rotation: -21 }
@@ -128,7 +128,7 @@ export const FACE_AREA_PATHS = [
   },
   {
     id: "lipsMouthCorners",
-    label: "입술 / 입꼬리",
+    label: "Lips / Mouth Corners",
     shapes: [
       { type: 'ellipse', cx: 622, cy: 863, rx: 80, ry: 47 }
     ],
@@ -142,7 +142,7 @@ export const FACE_AREA_PATHS = [
   },
   {
     id: "jawline",
-    label: "턱선 / V라인",
+    label: "Jawline / V-Line",
     shapes: [
       { type: 'ellipse', cx: 441, cy: 859, rx: 25, ry: 106, rotation: -29 },
       { type: 'ellipse', cx: 814, cy: 859, rx: 25, ry: 106, rotation: 29 }
@@ -157,7 +157,7 @@ export const FACE_AREA_PATHS = [
   },
   {
     id: "chin",
-    label: "턱",
+    label: "Chin",
     shapes: [
       { type: 'ellipse', cx: 625, cy: 948, rx: 107, ry: 64 }
     ],
@@ -173,7 +173,7 @@ export const FACE_AREA_PATHS = [
   },
   {
     id: "neck",
-    label: "목",
+    label: "Neck",
     shapes: [
       { type: 'ellipse', cx: 627, cy: 1093, rx: 154, ry: 87 }
     ],
