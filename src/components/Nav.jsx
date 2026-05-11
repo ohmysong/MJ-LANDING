@@ -91,8 +91,8 @@ const Nav = () => {
           >
             Consultation
           </a>
-          <a
-            href="/precheck"
+          <Link
+            to="/precheck"
             style={{
               fontFamily: 'var(--font-sans)',
               fontSize: 10,
@@ -103,12 +103,13 @@ const Nav = () => {
               background: 'var(--gold)',
               padding: '10px 22px',
               transition: 'opacity 0.2s',
+              textDecoration: 'none',
             }}
             onMouseEnter={e => e.target.style.opacity = '0.85'}
             onMouseLeave={e => e.target.style.opacity = '1'}
           >
             Pre-Check
-          </a>
+          </Link>
         </div>
 
         {/* Mobile hamburger */}

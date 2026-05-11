@@ -1,6 +1,6 @@
 import { useState } from 'react'
 
-export default function FormField({ label, type = 'text', value, onChange, placeholder, error, required, options, rows = 3 }) {
+export default function FormField({ label, type = 'text', value, onChange, placeholder, error, required, options, rows = 3, min, max }) {
   const [focused, setFocused] = useState(false)
 
   const fieldStyle = {
@@ -67,12 +67,14 @@ export default function FormField({ label, type = 'text', value, onChange, place
 
       ) : (
         <input
-          type="text"
+          type={type}
           value={value}
           onChange={e => onChange(e.target.value)}
           onFocus={() => setFocused(true)}
           onBlur={() => setFocused(false)}
           placeholder={placeholder}
+          min={min}
+          max={max}
           style={fieldStyle}
         />
       )}

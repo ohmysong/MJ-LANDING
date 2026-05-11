@@ -1,5 +1,8 @@
 import React, { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
+import { Link } from 'react-router-dom'
+
+const MotionLink = motion(Link)
 import FadeIn from './FadeIn'
 
 const countries = [
@@ -78,8 +81,8 @@ const Consultation = () => {
               Share your skin concerns, goals, and lifestyle — so we can prepare
               a personalised consultation plan before your visit.
             </p>
-            <motion.a
-              href="/precheck"
+            <MotionLink
+              to="/precheck"
               whileHover={{ opacity: 0.85 }}
               whileTap={{ scale: 0.98 }}
               style={{
@@ -95,7 +98,7 @@ const Consultation = () => {
               <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
                 <path d="M2 7h10M7 2l5 5-5 5" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round"/>
               </svg>
-            </motion.a>
+            </MotionLink>
           </div>
         </FadeIn>
 

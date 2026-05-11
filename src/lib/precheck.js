@@ -6,6 +6,7 @@ export const SKIN_CONCERNS = [
   { key: 'dryness',     label: 'Dryness',                   sub: 'Dehydration, flakiness, tight skin' },
   { key: 'texture',     label: 'Skin Texture',              sub: 'Roughness, uneven surface' },
   { key: 'pores',       label: 'Pores',                     sub: 'Enlarged or visible pores' },
+  { key: 'acne',        label: 'Acne',                       sub: 'Active breakouts, congestion, cysts' },
   { key: 'acneScars',   label: 'Acne Scars',                sub: 'Post-acne marks or indented scars' },
   { key: 'volumeLoss',  label: 'Volume Loss',               sub: 'Sunken cheeks, hollow temples' },
   { key: 'contour',     label: 'Facial Contour',            sub: 'Facial shape, proportions, symmetry' },
@@ -18,6 +19,6 @@ export const EMPTY_CONCERNS = Object.fromEntries(
 
 export const STEP_NAMES = [
   '', 'About You', 'Skin Assessment', 'Your Priorities',
-  'Aesthetic Goals', 'Investment', 'Lifestyle',
+  'Concern Areas', 'Aesthetic Goals', 'Investment', 'Lifestyle',
   'Health Profile', 'Reference Photos', 'Complete',
 ]

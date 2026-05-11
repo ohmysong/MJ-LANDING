@@ -3,7 +3,8 @@ import { motion, AnimatePresence } from 'framer-motion'
 import ProgressBar from './ProgressBar'
 import Step1BasicInfo     from './steps/Step1BasicInfo'
 import Step2SkinScoring   from './steps/Step2SkinScoring'
-import Step3TopPriorities from './steps/Step3TopPriorities'
+import Step3TopPriorities  from './steps/Step3TopPriorities'
+import Step4FaceAreaSelector from './steps/Step4FaceAreaSelector'
 import Step4AestheticStyle from './steps/Step4AestheticStyle'
 import Step5Budget        from './steps/Step5Budget'
 import Step6Lifestyle     from './steps/Step6Lifestyle'
@@ -20,7 +21,7 @@ function generateId() {
     : Math.random().toString(36).slice(2) + Date.now().toString(36)
 }
 
-const TOTAL = 8
+const TOTAL = 9
 
 const variants = {
   enter: dir => ({ x: dir > 0 ? 56 : -56, opacity: 0 }),
@@ -61,7 +62,7 @@ export default function PreCheckFlow() {
         createdAt: serverTimestamp(),
       })
       merge(patch)
-      go(9, 1)
+      go(10, 1)
     } catch (err) {
       console.error(err)
       setErr('Submission failed. Please check your connection and try again.')
@@ -74,13 +75,14 @@ export default function PreCheckFlow() {
     switch (step) {
       case 1: return <Step1BasicInfo     data={data.basicInfo ?? {}}        onNext={next} />
       case 2: return <Step2SkinScoring   data={data.concerns}               onNext={next} onBack={back} />
-      case 3: return <Step3TopPriorities concerns={data.concerns} selected={data.priorities} onNext={next} onBack={back} />
-      case 4: return <Step4AestheticStyle value={data.aestheticStyle}        onNext={next} onBack={back} />
-      case 5: return <Step5Budget        data={data.budget ?? {}}            onNext={next} onBack={back} />
-      case 6: return <Step6Lifestyle     data={data.lifestyle ?? {}}         onNext={next} onBack={back} />
-      case 7: return <Step7Medical       data={data.medical ?? {}}           onNext={next} onBack={back} />
-      case 8: return <Step8PhotoUpload   sessionId={sessionId} data={data.imageUrls} onNext={handleFinalSubmit} onBack={back} isSubmitting={submitting} />
-      case 9: return <Step9Complete      name={data.basicInfo?.fullName ?? ''} />
+      case 3: return <Step3TopPriorities    concerns={data.concerns} selected={data.priorities} onNext={next} onBack={back} />
+      case 4: return <Step4FaceAreaSelector data={data}                              onNext={next} onBack={back} />
+      case 5: return <Step4AestheticStyle   value={data.aestheticStyle}              onNext={next} onBack={back} />
+      case 6: return <Step5Budget           data={data.budget ?? {}}                 onNext={next} onBack={back} />
+      case 7: return <Step6Lifestyle        data={data.lifestyle ?? {}}              onNext={next} onBack={back} />
+      case 8: return <Step7Medical          data={data.medical ?? {}}                onNext={next} onBack={back} />
+      case 9: return <Step8PhotoUpload      sessionId={sessionId} data={data.imageUrls} onNext={handleFinalSubmit} onBack={back} isSubmitting={submitting} />
+      case 10: return <Step9Complete        name={data.basicInfo?.fullName ?? ''} />
       default: return null
     }
   }
@@ -103,7 +105,7 @@ export default function PreCheckFlow() {
       </header>
 
       {/* Content */}
-      <main style={{ paddingTop: step < 9 ? 140 : 100, paddingBottom: 100, paddingLeft: 32, paddingRight: 32 }}>
+      <main style={{ paddingTop: step < 9 ? 140 : 100, paddingBottom: 100, paddingLeft: 20, paddingRight: 20 }}>
         <AnimatePresence mode="wait" custom={dir}>
           <motion.div
             key={step}

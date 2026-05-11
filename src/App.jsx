@@ -1,5 +1,5 @@
 import React from 'react'
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { HashRouter, Routes, Route } from 'react-router-dom'
 import Nav from './components/Nav'
 import Hero from './components/Hero'
 import Philosophy from './components/Philosophy'
@@ -32,12 +32,12 @@ const LandingPage = () => (
 )
 
 const App = () => (
-  <BrowserRouter>
+  <HashRouter>
     <Routes>
       <Route path="/" element={<LandingPage />} />
       <Route path="/precheck" element={<PreCheckFlow />} />
     </Routes>
-  </BrowserRouter>
+  </HashRouter>
 )
 
 export default App

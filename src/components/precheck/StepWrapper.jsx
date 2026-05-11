@@ -1,6 +1,6 @@
-export default function StepWrapper({ eyebrow, title, description, children }) {
+export default function StepWrapper({ eyebrow, title, description, children, maxWidth = 680 }) {
   return (
-    <div style={{ maxWidth: 680, margin: '0 auto' }}>
+    <div style={{ maxWidth, margin: '0 auto' }}>
       <div style={{ marginBottom: 40 }}>
         {eyebrow && (
           <p style={{ fontFamily: 'var(--font-sans)', fontSize: 10, fontWeight: 600, letterSpacing: '0.25em', textTransform: 'uppercase', color: 'var(--gold)', marginBottom: 12 }}>
