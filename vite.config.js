@@ -80,5 +80,5 @@ function saveFaceAreasPlugin() {
 
 export default defineConfig({
   plugins: [react(), saveFaceAreasPlugin()],
-  base: '/',
+  base: '/mj/',
 })
