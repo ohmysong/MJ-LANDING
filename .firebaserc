@@ -1,9 +1,9 @@
 {
   "projects": {
-    "default": "YOUR_FIREBASE_PROJECT_ID"
+    "default": "medicalaccesskorea-88f58"
   },
   "targets": {
-    "YOUR_FIREBASE_PROJECT_ID": {
+    "medicalaccesskorea-88f58": {
       "hosting": {
         "mj-landing": ["mj-landing"]
       }
