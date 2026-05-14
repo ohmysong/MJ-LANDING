@@ -10,7 +10,7 @@ import Step5Budget        from './steps/Step5Budget'
 import Step6Lifestyle     from './steps/Step6Lifestyle'
 import Step7Medical       from './steps/Step7Medical'
 import Step8PhotoUpload   from './steps/Step8PhotoUpload'
-import Step9Complete      from './steps/Step9Complete'
+import RecommendationResult from './steps/RecommendationResult'
 import { EMPTY_CONCERNS } from '../../lib/precheck'
 import { db } from '../../lib/firebase'
 import { collection, addDoc, serverTimestamp } from 'firebase/firestore'
@@ -82,7 +82,7 @@ export default function PreCheckFlow() {
       case 7: return <Step6Lifestyle        data={data.lifestyle ?? {}}              onNext={next} onBack={back} />
       case 8: return <Step7Medical          data={data.medical ?? {}}                onNext={next} onBack={back} />
       case 9: return <Step8PhotoUpload      sessionId={sessionId} data={data.imageUrls} onNext={handleFinalSubmit} onBack={back} isSubmitting={submitting} />
-      case 10: return <Step9Complete        name={data.basicInfo?.fullName ?? ''} />
+      case 10: return <RecommendationResult data={data} />
       default: return null
     }
   }
@@ -101,11 +101,16 @@ export default function PreCheckFlow() {
             Maison Privé
           </p>
           {step < 9 && <ProgressBar step={step} total={TOTAL} />}
+          {step === 10 && (
+            <p style={{ fontFamily: 'var(--font-sans)', fontSize: 9, fontWeight: 600, letterSpacing: '0.35em', textTransform: 'uppercase', color: 'var(--gold)', textAlign: 'center' }}>
+              Curated Treatment Plan
+            </p>
+          )}
         </div>
       </header>
 
       {/* Content */}
-      <main style={{ paddingTop: step < 9 ? 140 : 100, paddingBottom: 100, paddingLeft: 20, paddingRight: 20 }}>
+      <main style={{ paddingTop: step <= 9 ? (step < 9 ? 140 : 100) : 100, paddingBottom: 100, paddingLeft: 20, paddingRight: 20 }}>
         <AnimatePresence mode="wait" custom={dir}>
           <motion.div
             key={step}
